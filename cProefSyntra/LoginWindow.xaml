@@ -108,7 +108,7 @@
                 <TextBlock TextAlignment="Center"
                            FontSize="15"
                            Padding="0 5 0 0">
-                    <Hyperlink>Forgot Password?</Hyperlink>
+                    <Hyperlink Foreground="#040405">Forgot Password?</Hyperlink>
                 </TextBlock>
             </StackPanel>
         </StackPanel>
