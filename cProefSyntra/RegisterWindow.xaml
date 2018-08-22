@@ -1,7 +1,8 @@
-﻿<controls:MetroWindow x:Class="cProefSyntra.LoginWindow"
+﻿<controls:MetroWindow
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls" 
+        x:Class="cProefSyntra.RegisterWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cProefSyntra"
@@ -15,7 +16,6 @@
                       Icon="Resources\ms_icon_310x310_GDo_icon.ico"
                       WindowTitleBrush="#040405"
                       WindowStartupLocation="CenterScreen">
-
     <Grid Background="#969696">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -47,14 +47,14 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <!-- Logo - Login Screen -->
+                <!-- Logo - Register Screen -->
                 <Image Source="Resources/logo_eindwerk.png"
                        Width="Auto"
                        Height="125" 
                        Grid.Column="1"
                        Margin="0 10 0 0"/>
 
-                <!-- Email Address - Login Screen -->
+                <!-- Email Address - Register Screen -->
                 <TextBox Name="TxtBoxEmail"
                          Grid.Column="1"
                          Grid.Row="1"
@@ -126,22 +126,6 @@
                         Height="40"
                         Style="{DynamicResource SquareButtonStyle}"
                         Click="LoginBtn_Click"/>
-
-                <!-- Forgot Password Option - Login Screen -->
-                <TextBlock TextAlignment="Center"
-                           FontSize="15"
-                           Padding="0 5 0 0">
-                    <Hyperlink Foreground="#040405">Forgot Password?</Hyperlink>
-                </TextBlock>
-
-                <!-- New User Option - Login Screen -->
-                <TextBlock TextAlignment="Center"
-                           FontSize="15"
-                           Padding="0 15 0 0">
-                    <Hyperlink Foreground="#040405"
-                               x:Name="RegisterBtn"
-                               Click="RegisterBtn_Click">New User?</Hyperlink>
-                </TextBlock>
             </StackPanel>
         </StackPanel>
     </Grid>
