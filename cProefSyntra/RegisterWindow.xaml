@@ -124,8 +124,7 @@
                         FontSize="20"
                         Width="200"
                         Height="40"
-                        Style="{DynamicResource SquareButtonStyle}"
-                        Click="LoginBtn_Click"/>
+                        Style="{DynamicResource SquareButtonStyle}"/>
             </StackPanel>
         </StackPanel>
     </Grid>

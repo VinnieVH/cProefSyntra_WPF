@@ -60,7 +60,7 @@
                          Grid.Row="1"
                          Margin="10 15 10 15"
                          Width="300"
-                         Height="40"
+                         Height="45"
                          FontSize="15"
                          VerticalContentAlignment="Center"
                          controls:TextBoxHelper.Watermark="Email"
@@ -82,7 +82,7 @@
                              Grid.Column="1"
                              Margin="10 15 10 15"
                              Width="300"
-                             Height="40"
+                             Height="45"
                              FontSize="15"
                              VerticalContentAlignment="Center"
                              controls:TextBoxHelper.Watermark="Password"
@@ -131,13 +131,15 @@
                 <TextBlock TextAlignment="Center"
                            FontSize="15"
                            Padding="0 5 0 0">
-                    <Hyperlink Foreground="#040405">Forgot Password?</Hyperlink>
+                    <Hyperlink Foreground="#040405"
+                               x:Name="ForgotPwd"
+                               Click="ForgotPwd_Click">Forgot Password?</Hyperlink>
                 </TextBlock>
 
                 <!-- New User Option - Login Screen -->
                 <TextBlock TextAlignment="Center"
                            FontSize="15"
-                           Padding="0 15 0 0">
+                           Padding="0 7 0 0">
                     <Hyperlink Foreground="#040405"
                                x:Name="RegisterBtn"
                                Click="RegisterBtn_Click">New User?</Hyperlink>
