@@ -42,14 +42,17 @@ namespace cProefSyntra
 
         public void Login()
         {
-            var credential = MongoCredential.CreateMongoCRCredential("test", "user1", "password1");
+            /// Login logic goes here
+        }
 
-            var settings = new MongoClientSettings
-            {
-                Credentials = new[] { credential }
-            };
+        public void Register()
+        {
+            /// Register logic goes here
+        }
 
-            var mongoClient = new MongoClient(settings);
+        public void ResetPassword()
+        {
+            /// Reset Password logic goes here
         }
     }
 }

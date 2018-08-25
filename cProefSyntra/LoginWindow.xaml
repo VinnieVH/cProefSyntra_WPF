@@ -16,7 +16,7 @@
                       WindowTitleBrush="#040405"
                       WindowStartupLocation="CenterScreen">
 
-    <Grid Background="#969696">
+    <Grid Background="#cccdd1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*" />
@@ -27,35 +27,43 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel HorizontalAlignment="Center" 
+        <Border BorderBrush="Gray" 
+                Grid.Column="1"
+                Grid.Row="1">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="12"
+                                  Direction="315"
+                                  Color="Gray"/>
+            </Border.Effect>
+            <StackPanel HorizontalAlignment="Center" 
                     Grid.Row="1" 
                     Grid.Column="1" 
                     Orientation="Vertical"
                     Panel.ZIndex="1"
                     Background="White">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <!-- Logo - Login Screen -->
-                <Image Source="Resources/logo_eindwerk.png"
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <!-- Logo - Login Screen -->
+                    <Image Source="Resources/logo_eindwerk.png"
                        Width="Auto"
                        Height="125" 
                        Grid.Column="1"
                        Margin="0 10 0 0"/>
 
-                <!-- Email Address - Login Screen -->
-                <TextBox Name="TxtBoxEmail"
+                    <!-- Email Address - Login Screen -->
+                    <TextBox Name="LoginTxtBoxEmail"
                          Grid.Column="1"
                          Grid.Row="1"
                          Margin="10 15 10 15"
@@ -66,18 +74,18 @@
                          controls:TextBoxHelper.Watermark="Email"
                          controls:TextBoxHelper.UseFloatingWatermark="True"
                          controls:TextBoxHelper.IsWaitingForData="True"/>
-                <TextBlock Height="23"
+                    <TextBlock Height="23"
                            Grid.Column="1"
                            Grid.Row="1"
                            HorizontalAlignment="Left" 
-                           x:Name ="EmailErrorMessage" 
+                           x:Name ="LoginEmailErrorMessage" 
                            VerticalAlignment="Top" 
                            Width="247"  
                            OpacityMask="Crimson" 
                            Foreground="#FFE5572C" Margin="10,57,0,0" Grid.RowSpan="2"  />
 
-                <!-- Password - Login Screen -->
-                <PasswordBox Name="PwBoxPassword"
+                    <!-- Password - Login Screen -->
+                    <PasswordBox Name="LoginPwBoxPassword"
                              Grid.Row="2"
                              Grid.Column="1"
                              Margin="10 15 10 15"
@@ -89,11 +97,11 @@
                              controls:TextBoxHelper.UseFloatingWatermark="True"
                              controls:TextBoxHelper.IsWaitingForData="True"/>
 
-                <TextBlock Height="23"
+                    <TextBlock Height="23"
                            Grid.Column="1"
                            Grid.Row="2"
                            HorizontalAlignment="Left" 
-                           x:Name ="PwErrorMessage" 
+                           x:Name ="LoginPwErrorMessage" 
                            VerticalAlignment="Top" 
                            Width="247"  
                            OpacityMask="Crimson" 
@@ -101,8 +109,8 @@
                            Margin="10,57,0,0" 
                            Grid.RowSpan="2"  />
 
-                <!-- Show Password Option - Login Screen -->
-                <CheckBox Name="ChkBoxPassword"
+                    <!-- Show Password Option - Login Screen -->
+                    <CheckBox Name="LoginChkBoxPassword"
                           VerticalAlignment="Center"
                           FontSize="15"
                           Grid.Column="1"
@@ -111,40 +119,41 @@
                           Margin="0,10,10,-10"
                           Content="Show Password" 
                           Grid.RowSpan="3"/>
-            </Grid>
+                </Grid>
 
-            <!-- Login Options - Login Screen -->
-            <StackPanel Margin="0 40 0 10" 
+                <!-- Login Options - Login Screen -->
+                <StackPanel Margin="0 40 0 10" 
                         Orientation="Vertical"
                         HorizontalAlignment="Center">
 
-                <!-- Login Button - Login Screen -->
-                <Button Name="LoginBtn"
+                    <!-- Login Button - Login Screen -->
+                    <Button Name="LoginBtn"
                         Content="Login"
                         FontSize="20"
-                        Width="200"
+                        Width="175"
                         Height="40"
                         Style="{DynamicResource SquareButtonStyle}"
                         Click="LoginBtn_Click"/>
 
-                <!-- Forgot Password Option - Login Screen -->
-                <TextBlock TextAlignment="Center"
+                    <!-- Forgot Password Option - Login Screen -->
+                    <TextBlock TextAlignment="Center"
                            FontSize="15"
                            Padding="0 5 0 0">
                     <Hyperlink Foreground="#040405"
-                               x:Name="ForgotPwd"
-                               Click="ForgotPwd_Click">Forgot Password?</Hyperlink>
-                </TextBlock>
+                               x:Name="LoginForgotPwd"
+                               Click="LoginForgotPwd_Click">Forgot Password?</Hyperlink>
+                    </TextBlock>
 
-                <!-- New User Option - Login Screen -->
-                <TextBlock TextAlignment="Center"
+                    <!-- New User Option - Login Screen -->
+                    <TextBlock TextAlignment="Center"
                            FontSize="15"
                            Padding="0 7 0 0">
                     <Hyperlink Foreground="#040405"
-                               x:Name="RegisterBtn"
-                               Click="RegisterBtn_Click">New User?</Hyperlink>
-                </TextBlock>
+                               x:Name="LoginRegisterBtn"
+                               Click="LoginRegisterBtn_Click">New User?</Hyperlink>
+                    </TextBlock>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </Border>
     </Grid>
 </controls:MetroWindow>

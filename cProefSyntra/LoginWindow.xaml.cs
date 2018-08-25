@@ -18,29 +18,26 @@ namespace cProefSyntra
         }
 
         MainWindow main = new MainWindow();
-        RegisterWindow registration = new RegisterWindow();
-        MongoClient client = new MongoClient("mongodb://VincentVH:Vincent159Derp@ds217560.mlab.com:17560/c-proef_syntra");
-
-
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(TxtBoxEmail.Text.Length == 0)
+            if(LoginTxtBoxEmail.Text.Length == 0)
             {
-                EmailErrorMessage.Text = "Enter an email.";
-                TxtBoxEmail.Focus();
+                LoginEmailErrorMessage.Text = "Enter an email.";
+                LoginTxtBoxEmail.Focus();
             }
-            else if(!Regex.IsMatch(TxtBoxEmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+            else if(!Regex.IsMatch(LoginTxtBoxEmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             {
-                EmailErrorMessage.Text = "Enter a valid email.";
-                TxtBoxEmail.Select(0, TxtBoxEmail.Text.Length);
-                TxtBoxEmail.Focus();
+                LoginEmailErrorMessage.Text = "Enter a valid email.";
+                LoginTxtBoxEmail.Select(0, LoginTxtBoxEmail.Text.Length);
+                LoginTxtBoxEmail.Focus();
             }
             else
             {
-                string email = TxtBoxEmail.Text;
-                string password = PwBoxPassword.Password;
+                string email = LoginTxtBoxEmail.Text;
+                string password = LoginPwBoxPassword.Password;
 
+                MongoClient client = new MongoClient("mongodb://VincentVH:Vincent159Derp@ds217560.mlab.com:17560/c-proef_syntra");
 
                 /// Testing DB code (needs to be replaced)
                 var db = client.GetDatabase("c-proef_syntra");
@@ -56,13 +53,15 @@ namespace cProefSyntra
             }
         }
 
-        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        private void LoginRegisterBtn_Click(object sender, RoutedEventArgs e)
         {
+            RegisterWindow registration = new RegisterWindow();
+
             registration.Show();
             Close();
         }
 
-        private void ForgotPwd_Click(object sender, RoutedEventArgs e)
+        private void LoginForgotPwd_Click(object sender, RoutedEventArgs e)
         {
 
         }

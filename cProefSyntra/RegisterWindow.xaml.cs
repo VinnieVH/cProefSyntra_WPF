@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,19 @@ namespace cProefSyntra
         public RegisterWindow()
         {
             InitializeComponent();
+        }
+
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RegisterHaveAccount_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow login = new LoginWindow();
+
+            login.Show();
+            Close();
         }
     }
 }
