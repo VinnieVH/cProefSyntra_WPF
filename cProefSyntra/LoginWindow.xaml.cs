@@ -37,19 +37,6 @@ namespace cProefSyntra
                 string email = LoginTxtBoxEmail.Text;
                 string password = LoginPwBoxPassword.Password;
 
-                MongoClient client = new MongoClient("mongodb://VincentVH:Vincent159Derp@ds217560.mlab.com:17560/c-proef_syntra");
-
-                /// Testing DB code (needs to be replaced)
-                var db = client.GetDatabase("c-proef_syntra");
-                var collection = db.GetCollection<Employee>("employees");
-
-                /// Create a unique field for Email Address
-                var options = new CreateIndexOptions() { Unique = true };
-                var field = new StringFieldDefinition<Employee>("Email");
-                var IndexDefintion = new IndexKeysDefinitionBuilder<Employee>().Ascending(field);
-                collection.Indexes.CreateOneAsync(IndexDefintion, options);
-                Employee employee = new Employee("Vincent", "Van Herreweghe", "CEO", "vincentvanherreweghe@gmail.com", "Vincent159Derp", true);
-                collection.InsertOne(employee);
             }
         }
 

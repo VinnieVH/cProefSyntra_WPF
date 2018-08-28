@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace cProefSyntra
 
         public string JobTitle { get; set; }
 
+        [BsonId]
         public string Email { get; set; }
 
         public string Password { get; set; }
@@ -42,12 +44,17 @@ namespace cProefSyntra
 
         public void Login()
         {
-            /// Login logic goes here
+            MongoClient client = new MongoClient("mongodb://VincentVH:Vincent159Derp@ds217560.mlab.com:17560/c-proef_syntra");
+
+            /// Testing DB code (needs to be replaced)
+            var db = client.GetDatabase("c-proef_syntra");
+            var collection = db.GetCollection<Employee>("employees");
         }
 
         public void Register()
         {
             /// Register logic goes here
+
         }
 
         public void ResetPassword()
